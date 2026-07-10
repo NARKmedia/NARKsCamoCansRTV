@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="PhysicsMaterial" path="res://Items/Physics/Item_Physics.tres" id="1"]
+[ext_resource type="Script" path="res://Scripts/Pickup.gd" id="2"]
+[ext_resource type="Resource" path="res://NARK_Camo_Cans/Items/Attachments/NARK_CamoCan_M78_Gold/NARK_CamoCan_M78_Gold.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/SlotData.gd" id="4"]
+[ext_resource type="ArrayMesh" path="res://NARK_Camo_Cans/Items/Attachments/_Shared/Files/MS_Shared_CamoCan_Mesh.tres" id="5"]
+
+[sub_resource type="Resource" id="Resource_slotdata"]
+script = ExtResource("4")
+resource_local_to_scene = true
+itemData = ExtResource("3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_can"]
+size = Vector3(0.06, 0.18, 0.06)
+
+[node name="NARK_CamoCan_M78_Gold" type="RigidBody3D" node_paths=PackedStringArray("mesh", "collision") groups=["Item"]]
+collision_layer = 4
+collision_mask = 29
+physics_material_override = ExtResource("1")
+script = ExtResource("2")
+slotData = SubResource("Resource_slotdata")
+mesh = NodePath("LOD0")
+collision = NodePath("Collision")
+
+[node name="LOD0" type="MeshInstance3D" parent="."]
+layers = 4
+visibility_range_end = 10.0
+mesh = ExtResource("5")
+
+[node name="LOD1" type="MeshInstance3D" parent="."]
+layers = 4
+visibility_range_begin = 9.0
+visibility_range_end = 25.0
+mesh = ExtResource("5")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0)
+shape = SubResource("BoxShape3D_can")

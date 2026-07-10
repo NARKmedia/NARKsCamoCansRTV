@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/ItemData.gd" id="1"]
+
+[resource]
+rarity = 4
+script = ExtResource("1")
+file = "NARK_CamoCan_M78_Gold"
+name = "Camo Can! (M78 - Gold)"
+inventory = "Camo"
+rotated = "Camo"
+equipment = "Camo"
+display = "Camo"
+type = "Attachment"
+subtype = "Camo"
+weight = 0.25
+value = 2500
+size = Vector2(1, 2)
+audio = null
+compatible = []
+material = null
+showAmount = false
+showCondition = false
+repairs = false
+civilian = true
+military = false
+gunsmith = true
+orientation = 90.0
+wallOffset = 0.02

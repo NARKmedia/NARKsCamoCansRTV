@@ -1,0 +1,16 @@
+[mod]
+replace_files=false
+id="nark_camo_cans"
+name="NARK's Camo Cans"
+version="0.1.1"
+priority=970
+author="NARK"
+
+[autoload]
+NARK_Camo_Cans="res://NARK_Camo_Cans/Main.gd"
+
+[hooks]
+res://Scripts/Interface.gd = "CombineCheck"
+res://Scripts/WeaponRig.gd = "_ready, Reload, FireEvent"
+
+[registry]
