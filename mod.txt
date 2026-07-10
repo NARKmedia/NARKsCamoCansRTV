@@ -2,7 +2,7 @@
 replace_files=false
 id="nark_camo_cans"
 name="NARK's Camo Cans"
-version="0.1.1"
+version="0.1.2"
 priority=970
 author="NARK"
 
